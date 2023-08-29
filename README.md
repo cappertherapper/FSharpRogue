@@ -3,6 +3,8 @@
 ## Introduction
 This project is about the development of a roguelike game using F#. The report details the coding process and the methodologies used in structuring the code. It provides an explanation of the functions and how the code operates.
 
+![Game_running](gameSC.png)
+
 ## Program Description
 The game consists of several elements:
 
