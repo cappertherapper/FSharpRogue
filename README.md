@@ -5,6 +5,24 @@ This project is about the development of a roguelike game using F#. The report d
 
 ![Game_running](gameSC.png)
 
+## Run game
+
+#### Compile Library
+fsharpc --doc:dok.xml -a roguelike.fs
+#### Compile level
+fsharpc -r roguelike.dll roguelike-game.fsx
+#### Run level
+mono roguelike-game.exe
+#### Controls:
+Move up: Arrow up
+Move down: Arrow down
+Move left: Arrow left
+Move right: Arrow right
+Restart game: r
+Jump over solid: <interact with object> w
+Stop game: ctrl c
+
+
 ## Program Description
 The game consists of several elements:
 
