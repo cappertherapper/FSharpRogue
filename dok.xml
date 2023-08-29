@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>roguelike</name></assembly>
+<members>
+<member name="M:Game.World.Play">
+<returns >Opdaterer en liste til at indholde argumentet I</returns>
+<summary>En funktion der har til formål at vise en map og en spiller
+ som kan bevæge sig rundt på mappet og inteagere med Items</summary>
+</member>
+<member name="M:Game.World.AddItem(Game.Item)">
+<summary>Funktion der tilføjer en Item til en muterbar liste
+ af Items</summary>
+<param name = "I"> heltal </param>
+</member>
+<member name="T:Game.World">
+<returns >Returnerer sand eller falsk afhængig af spillerens lok.</returns>
+</member>
+<member name="P:Game.Exit.FullyOccupy">
+<returns >Opdaterer spillerens muterbare tilstand "Win" til
+sand hvis hitpoints er over 5, ellers opdateres tilstanden ikke</returns>
+</member>
+<member name="M:Game.Exit.InteractWith(Game.Player)">
+<summary>Spiller slutter når spilleren er på samme koordinat som
+ Exit med mindst 5 hitpoints.</summary>
+<param name = "P">Spiller</param>
+</member>
+<member name="P:Game.Fire.FullyOccupy">
+<returns >Indsat counter, efter fem turer stopper ilden 
+ med at brænde</returns>
+</member>
+<member name="M:Game.Fire.InteractWith(Game.Player)">
+<summary>Udvidelse: Funktionen aktiverer en tilstand hos spilleren hvor
+ der er sat ild til dem og de mister 1 hp i de efterfølgende
+ 5 runder</summary>
+<param name = "P"> Spiller </param>
+</member>
+<member name="P:Game.Water.FullyOccupy">
+<returns >Healer spilleren op til et maksimum af 20 hitpoints.
+ Returnerer true, da item ikke forsvinder efter interaktion.</returns>
+</member>
+<member name="M:Game.Water.InteractWith(Game.Player)">
+<summary>Funktion som healer spilleren hvis de er på samme felt</summary>
+<param name = "P"> Spiller </param>
+</member>
+<member name="P:Game.Item.Loc">
+<returns >Returnerer en bool, hvis den er sand kan spilleren ikke
+ rykke til det felt.</returns>
+</member>
+<member name="P:Game.Item.FullyOccupy">
+<returns >Returnerer en bool der giver udtryk for om item fortsat skal
+ være på mappet</returns>
+<summary>Funktioen skal fortælle om spilleren kan være på samme felt
+ som en item</summary>
+</member>
+<member name="M:Game.Item.InteractWith(Game.Player)">
+<summary> Funktionen har til formål at benytte spiller-funktioner
+ såfremt den givne item skader eller healer spilleren, eller teleporterer
+ ham.</summary>
+</member>
+<member name="F:Game.Player.Win@">
+<returns >Opdaterer placering og gemmer tidl. placering</returns>
+</member>
+<member name="P:Game.Player.Win(System.Boolean)">
+<returns >Opdaterer placering og gemmer tidl. placering</returns>
+</member>
+<member name="P:Game.Player.Win">
+<returns >Opdaterer placering og gemmer tidl. placering</returns>
+</member>
+<member name="P:Game.Player.Hitpoints">
+<returns >Opdaterer et felt i Canvas med spillerens karakter,
+ forgrundsfarve og baggrundsfarve.</returns>
+</member>
+<member name="M:Game.Player.RenderOn(Game.Canvas)">
+<summary>RenderOn er blot en funktion som</summary>
+<param name = "C">Tager et Canvas som argument</param>
+</member>
+<member name="M:Game.Player.MoveTo(System.Int32,System.Int32)">
+<summary> Opdaterer spillerens placering på Canvas og gemmer tidligere
+ placering.</summary>
+<param name = "g"> heltal, x koordinat</param>
+<param name = "j"> heltal, y koordinat</param>
+</member>
+<member name="P:Game.Canvas.Show">
+<summary>Funktion der viser et Array i terminalen</summary>
+</member>
+<member name="P:Game.Canvas.Rows">
+<returns >Der returneres et Array af rows*cols størrelse, hvor konsollen
+ farves med de farver og characters som Arrayet har som gemte 
+ værdier</returns>
+</member>
+<member name="M:Game.Canvas.Set(System.Int32,System.Int32,System.Char,System.ConsoleColor,System.ConsoleColor)">
+<summary> Funktion der overskriver et felt (x,y) i et 2D Array med 
+ nye værdier for; karakter, forgrundsfarve og baggrundsfarve. </summary>
+<param name = "x">heltal, x koordinat</param>
+<param name = "y">heltal, y koordinat</param>
+<param name = "c">karakter</param>
+<param name = "fg">Farve, farver kun karakteren</param>
+<param name = "bg">Farve, farver feltet</param>
+</member>
+<member name="T:Game.Color">
+<returns >Returnerer et tilfældigt heltal mellem 0 og int</returns>
+</member>
+<member name="M:Game.NoAreas(Game.Player,Game.Canvas)">
+<summary>Fortæller om spillerens lokation på Canvas er udenfor mappet 
+ eller på en item der fylder hele sit felt.</summary>
+<param name = "P">Spiller</param>
+<param name = "C">Canvas</param>
+</member>
+<member name="P:Game.rand">
+<summary> Funktionen laver tilfældige heltal fra 0 til en int </summary>
+<param name = "int"> heltal </param>
+</member>
+<member name="M:Game.remove``1(System.Int32,Microsoft.FSharp.Collections.FSharpList{``0})">
+<summary>Funktion der fjerner index x fra en liste lst</summary>
+<param name = "x">Heltal, index i listen, starter ved 0</param>
+<param name = "lst">En liste</param>
+</member>
+</members>
+</doc>
